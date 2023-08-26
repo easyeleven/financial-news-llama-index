@@ -27,9 +27,7 @@ report_type = st.selectbox(
 
 
 if report_type == 'Single Stock Outlook':
-    symbol = st.text_input("Stock Symbol")
-
-    if symbol:
+    if symbol := st.text_input("Stock Symbol"):
         with st.spinner(f'Generating report for {symbol}...'):
             response = query_engine.query(f"Write a report on the outlook for {symbol} stock from the years 2023-2027. Be sure to include potential risks and headwinds.")
 
